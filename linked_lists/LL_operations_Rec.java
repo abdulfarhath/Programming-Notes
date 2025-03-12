@@ -44,7 +44,7 @@ public class LL_operations_Rec{
 	    if (idx == 0) {
 	        return new Node(val, head);
 	    }
-	    if (head == null) { // Handle out-of-bounds index case
+	    if (head == null) { 
 	        return null;
 	    }
 	    head.next = insertionIdxRec(head.next, idx - 1, val);
