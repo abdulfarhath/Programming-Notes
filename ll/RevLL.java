@@ -12,15 +12,22 @@ public class RevLL {
 
         System.out.println("Original Linked List:");
         llops.disp(head);
-
-        head = rev(head); // Reverse the linked list
+        
+        head = rev(head,head); // Reverse the linked list
 
         System.out.println("Reversed Linked List:");
-        llops.disp(head);
+        
+        llops.disp(head.next);
     }
 
-    static Node rev(Node head) {
-        //rev ll code
+    static Node rev(Node head,Node temp) {
+        if(head == null) return temp;
+        if(head.next == null){
+            temp.next = head;
+            temp = temp.next;
+            return null;
+        }
+        head.next = rev(head.next,temp);
         return head;
     }
 }
