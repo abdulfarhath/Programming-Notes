@@ -1,4 +1,5 @@
 import java.util.*;
+//preorder, postorder, inorder, levelorder == BFS
 
 public class Traversals{
 	public static void main(String[] args) {
