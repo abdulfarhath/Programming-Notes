@@ -2,6 +2,7 @@
 public class heap_impl{
 	public static void main(String[] args) {
 		Heap h = new Heap();
+		
 	}
 }
 
