@@ -34,8 +34,33 @@ public class Traversals{
 		for(int i = 0; i<levels.size(); i++){
 			System.out.println(levels.get(i));
 		}
+
+		System.out.println("BFS");
+		BFS(root);
+
+		System.out.println("pretty : ");
+		
+
 	}
 
+	//BFS USING QUEUE
+	private static void BFS(Node root){
+		if(root == null) return ;
+		Queue<Node> q = new LinkedList<Node>();
+		q.add(root);
+		while(!q.isEmpty()){
+			int lvlSize = q.size();
+			for(int i = 0; i<lvlSize; i++){
+				Node curr = q.remove();
+				System.out.print(curr.val + " ");
+				if(curr.left != null) q.add(curr.left);
+				if(curr.right != null) q.add(curr.right);
+			}
+			System.out.println();
+		}
+	}
+
+	//BFS/LVL ORDER
 	private static void lvlOrder(Node root, List<List<Integer>> levels, int lvl){
 		if(root == null) return;
 
@@ -49,6 +74,11 @@ public class Traversals{
 		lvlOrder(root.right, levels, lvl+1);
 	}
 
+
+	private static void prettyTree(Node root){
+		
+	}
+	
 	private static void preorder(Node root){
 		if(root == null) return;
 		System.out.print(root.val + " ");
