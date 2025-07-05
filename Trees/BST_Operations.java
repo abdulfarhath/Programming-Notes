@@ -4,6 +4,7 @@ public class BST_Operations {
     public static void main(String[] args) {
         Node root = null;
         root = seedBst(root);
+        System.out.println("helo");
         inorder(root); // optional: to check the structure
     }
 
